@@ -21,15 +21,22 @@ function App() {
     const accessKey = process.env.REACT_APP_ACCESS_KEY;
     const fetchData = async(input, page) => {
       setLoading(true);
-        const response = await axios.get(
-          `https://api.unsplash.com/search/photos?page=${page}&query=${
-            !input ? 'cats' : input
-          }&client_id=${accessKey}&per_page=20`
-          );
-         const data  = await response.data
-         console.log(response.data)
-         setImages(data);
-         setLoading(false);
+      const headers = {
+        Authorization: `Client-ID ${accessKey}`
+      };
+      const params = {
+        query: input ? input : "cats",
+        per_page: 20,
+        page: page ? page : 1
+      }
+      const options = {
+        headers: headers,
+        params: params
+      };
+      const response = await axios.get("https://api.unsplash.com/search/photos", options);
+      const data  = await response.data
+      setImages(data);
+      setLoading(false);
     };
 
     const handleChange = (event) =>{

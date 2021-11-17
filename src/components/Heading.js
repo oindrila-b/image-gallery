@@ -12,7 +12,7 @@ export const Heading = () => {
                 color : 'blueviolet'
             }}
             
-            >REACT IMAGE GALLERY USING UNSPLASH</h1>
+            >REACT IMAGE GALLERY USING UNSPLASH API</h1>
         </div>
     )
 }

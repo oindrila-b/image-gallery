@@ -1,4 +1,4 @@
-import { Button, GridListTile, GridListTileBar } from '@material-ui/core'
+import { GridListTileBar } from '@material-ui/core'
 import FileSaver from 'file-saver'
 import React from 'react'
 import axios from 'axios'
@@ -15,7 +15,6 @@ export const Modal = ({selectedImg, setSelectedImg}) => {
     }
 
     const downloadPhoto = async (event) => {
-        console.info(selectedImg);
         const headers = {
             "Authorization": `Client-ID ${accessKey}`
         };

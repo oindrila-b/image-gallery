@@ -11,8 +11,6 @@ export const Input = (props) => {
             label = " Search for anything"
             onChange ={props.change}
            
-           
-           
            />
         </form>
     )
